@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Assignment 6.1";
+}
+
+@model CIS174_TestCoreApp.Models.StudentViewModel
+
+<h2>Assignment 6.1</h2>
+
+@if (Model.AccessLevel >= 1 && Model.AccessLevel <= 10)
+{
+    if (Model.AccessLevel > 8)
+    {
+        <p><strong>Hello, Admin.</strong></p>
+        <p>Student First Name: @Model.FirstName</p>
+        <p>Student Last Name: @Model.LastName</p>
+        <p>Student Grade: @Model.Grade</p>
+    }
+    else if (Model.AccessLevel > 2)
+    {
+        <p>Student First Name: @Model.FirstName</p>
+        <p>Student Last Name: @Model.LastName</p>
+    }
+    else
+    {
+        <p>You do not have a sufficient access level to view this data.</p>
+    }
+}
