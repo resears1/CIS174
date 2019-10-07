@@ -1,0 +1,58 @@
+﻿@using CIS174_TestCoreApp
+@model ViewModel
+
+@{
+    ViewData["Title"] = "Assignment 6.1";
+}
+
+@{
+    // get "id" from the url and parse it as an int (wouldn't work directly)
+    string access = (string)@ViewContext.RouteData.Values["id"];
+    int accessID = int.Parse(access);
+}
+
+<h2>Assignment 6.1</h2>
+
+@{
+    // Compare id to set number levels and change the information based on each value of the url 
+}
+
+@if (accessID <= 2)
+{
+    <h3>You do not have a sufficient access level to view this data.</h3>
+}
+else if (accessID > 2 && accessID < 8)
+{
+    <table>
+        <tr>
+            <th>First Name |</th>
+            <th>Last Name |</th>
+        </tr>
+        @foreach (Student student in Model.Students)
+        {
+            <tr>
+                <td> @student.FirstName</td>
+                <td> @student.LastName</td>
+            </tr>
+        }
+    </table>
+}
+else if (accessID >= 8)
+{
+    <h3>Hello, Admin.</h3>
+    <table>
+        <tr>
+            <th>First Name |</th>
+            <th>Last Name |</th>
+            <th> Grade</th>
+        </tr>
+        @foreach (Student student in Model.Students)
+        {
+            <tr>
+                <td> @student.FirstName</td>
+                <td> @student.LastName</td>
+                <td> @student.Grade</td>
+            </tr>
+        }
+    </table>
+}
