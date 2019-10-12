@@ -1,0 +1,67 @@
+﻿@model CIS174_TestCoreApp.Models.PersonNewViewModel
+
+
+
+@{
+    ViewData["Title"] = "Assignment 7.1 - Create Person";
+}
+
+<style>
+    .warning{
+        background-color: red;
+    }
+</style>
+
+<environment names="Development">
+    <div class="warning">You are in a non-production environment.</div>
+</environment>
+
+<a asp-area="" asp-controller="Home" asp-action="Index">Click Here to go to the Homepage</a>
+
+<h1>@ViewData["Title"]</h1>
+
+
+<form method="post">
+    <div>
+        <label asp-for="FirstName"></label>
+        <input asp-for="FirstName" />
+        <span asp-validation-for="FirstName"></span>
+    </div>
+    <div>
+        <label asp-for="LastName"></label>
+        <input asp-for="LastName" />
+        <span asp-validation-for="LastName"></span>
+    </div>
+    <div>
+        <label asp-for="Age"></label>
+        <input asp-for="Age" />
+        <span asp-validation-for="Age"></span>
+    </div>
+    <div>
+        <label asp-for="DateOfBirth"></label>
+        <input asp-for="DateOfBirth" />
+        <span asp-validation-for="DateOfBirth"></span>
+    </div>
+    <div>
+        <label asp-for="Email"></label>
+        <input asp-for="Email" />
+        <span asp-validation-for="Email"></span>
+    </div>
+    <div>
+        <label asp-for="Password"></label>
+        <input asp-for="Password" />
+        <span asp-validation-for="Password"></span>
+    </div>
+    <div>
+        <label asp-for="ConfirmPassword"></label>
+        <input asp-for="ConfirmPassword" />
+        <span asp-validation-for="ConfirmPassword"></span>
+    </div>
+    <div>
+        <label>Country</label>
+        <select asp-for="SelectedCountry" asp-items="Model.Countries">
+            <option value="">-Please Select a Country-</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>
