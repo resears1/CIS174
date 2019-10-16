@@ -31,3 +31,6 @@ C:\Users\Ricky\source\repos\CIS174_TestCoreApp\CIS174_TestCoreApp\obj\Release\ne
 C:\Users\Ricky\source\repos\CIS174_TestCoreApp\CIS174_TestCoreApp\obj\Release\netcoreapp2.1\CIS174_TestCoreApp.dll
 C:\Users\Ricky\source\repos\CIS174_TestCoreApp\CIS174_TestCoreApp\obj\Release\netcoreapp2.1\CIS174_TestCoreApp.pdb
 C:\Users\Ricky\source\repos\CIS174_TestCoreApp\CIS174_TestCoreApp\obj\Release\netcoreapp2.1\CIS174_TestCoreApp.csproj.CopyComplete
+C:\Users\Ricky\source\repos\CIS174_TestCoreApp\CIS174_TestCoreApp\obj\Release\netcoreapp2.1\UserSecretsAssemblyInfo.cs
+C:\Users\Ricky\source\repos\CIS174_TestCoreApp\CIS174_TestCoreApp\obj\Release\netcoreapp2.1\Razor\Views\Person\Index.g.cshtml.cs
+C:\Users\Ricky\source\repos\CIS174_TestCoreApp\CIS174_TestCoreApp\obj\Release\netcoreapp2.1\Razor\Views\PersonNew\Index.g.cshtml.cs
