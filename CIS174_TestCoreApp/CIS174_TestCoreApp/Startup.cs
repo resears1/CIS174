@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CIS174_TestCoreApp.Entities;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -31,9 +32,13 @@ namespace CIS174_TestCoreApp
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddDbContext<PersonContext>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
                 .AddXmlSerializerFormatters();
+
+            services.AddScoped<PersonService>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,7 +60,7 @@ namespace CIS174_TestCoreApp
 
             app.UseMvc(routes =>
             {
-                routes.MapRoute(
+              routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
         });

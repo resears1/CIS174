@@ -1,0 +1,22 @@
+﻿@model CIS174_TestCoreApp.Models.AwardsViewModel
+
+@{
+    ViewData["Title"] = "View";
+}
+
+<h2>View</h2>
+
+<h4>AwardsViewModel</h4>
+@if (Model.IsActive == true)
+{
+    <ul>
+        @foreach (var award in Model.Awards)
+        {
+            <li>@award.ToString()</li>
+        }
+    </ul>
+    @if (Model.Awards.Count() > 5)
+    {
+        <p><strong>Great Job!</strong></p>
+    }
+}

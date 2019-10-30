@@ -1,0 +1,16 @@
+﻿@model UpdatePersonCommand
+@{
+    ViewData["Title"] = "Edit Person";
+}
+<h2>@ViewData["Title"]</h2>
+<hr />
+<form asp-controller="Person3" asp-action="Edit" method="post" class="form-horizontal">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    @await Html.PartialAsync("_EditPersonPartial")
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="hidden" asp-for="Id" />
+            <button type="submit" class="btn btn-primary">Update</button>
+        </div>
+    </div>
+</form>

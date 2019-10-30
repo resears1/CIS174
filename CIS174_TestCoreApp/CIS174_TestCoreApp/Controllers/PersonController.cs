@@ -7,11 +7,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CIS174_TestCoreApp.Controllers
 {
-    public class PersonController : Controller
+    public class PersoOldController : Controller
     {
         public IActionResult Index()
         {
-            var viewModel = new CreatePersonViewModel
+            var viewModel = new CreatePersonOldViewModel
             {
                 School = "DMACC"
             };
@@ -20,7 +20,7 @@ namespace CIS174_TestCoreApp.Controllers
         }
 
         [HttpPost]
-        public IActionResult Index(CreatePersonViewModel model)
+        public IActionResult Index(CreatePersonOldViewModel model)
         {
             if (!ModelState.IsValid)
             {
