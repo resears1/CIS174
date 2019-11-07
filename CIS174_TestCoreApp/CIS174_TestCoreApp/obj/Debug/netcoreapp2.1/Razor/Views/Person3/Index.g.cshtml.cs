@@ -113,7 +113,7 @@ using CIS174_TestCoreApp.Models;
             WriteLiteral("</td>\r\n                <td>");
             EndContext();
             BeginContext(629, 67, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fa181f5113e84b4a8545d7b4e6f2f907", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0bd1deceecb94f65ac8d04095ddf17ee", async() => {
                 BeginContext(688, 4, true);
                 WriteLiteral("View");
                 EndContext();
@@ -157,7 +157,7 @@ using CIS174_TestCoreApp.Models;
             WriteLiteral("        </tbody>\r\n    </table>\r\n</div>\r\n");
             EndContext();
             BeginContext(777, 68, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9be6824128494979a039da4764e14bc2", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6dc4d5a3929640b28eb0cf9827f2a3ab", async() => {
                 BeginContext(824, 17, true);
                 WriteLiteral("Create new Person");
                 EndContext();

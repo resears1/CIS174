@@ -55,7 +55,7 @@ using CIS174_TestCoreApp.Models;
             WriteLiteral("\r\n<h2>Create Person</h2>\r\n");
             EndContext();
             BeginContext(85, 3735, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8161e8ea42a49b196110f9f0ae7a70f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9c3861b5e2af4901a387cd7aa8c3a6f5", async() => {
                 BeginContext(105, 148, true);
                 WriteLiteral("\r\n    <div class=\"row\">\r\n        <div class=\"col-md-6\">\r\n            <div class=\"row\">\r\n                <div class=\"col-md-4\">\r\n                    ");
                 EndContext();

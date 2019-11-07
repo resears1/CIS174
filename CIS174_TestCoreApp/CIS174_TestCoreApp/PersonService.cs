@@ -11,10 +11,11 @@ namespace CIS174_TestCoreApp
     public class PersonService
     {
         readonly PersonContext _context;
-
-        public PersonService(PersonContext context)
+        readonly ILogger _logger;
+        public PersonService(PersonContext context, ILoggerFactory factory)
         {
             _context = context;
+            _logger = factory.CreateLogger<PersonService>();
         }
 
         public ICollection<PersonSummary> GetPeople()
@@ -28,6 +29,23 @@ namespace CIS174_TestCoreApp
                     LastName = p.LastName,
                 })
                 .ToList();
+        }
+
+        public bool DoesPersonExist(int id)
+        {
+            return _context.People
+                .Where(r => !r.IsDeleted)
+                .Where(r => r.Id == id)
+                .Any();
+        }
+
+        public bool IsNameCorrect(string first, string last)
+        {
+            return _context.People
+                .Where(r => !r.IsDeleted)
+                .Where(r => r.FirstName == first)
+                .Where(r => r.LastName == last)
+                .Any();
         }
 
         public PersonDetail GetPersonDetail(int id)
