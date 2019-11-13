@@ -69,3 +69,4 @@ C:\Users\Ricky\source\repos\CIS174_TestCoreApp\CIS174_TestCoreApp\obj\Release\ne
 C:\Users\Ricky\source\repos\CIS174_TestCoreApp\CIS174_TestCoreApp\obj\Release\netcoreapp2.1\Razor\Views\Manage\_StatusMessage.g.cshtml.cs
 C:\Users\Ricky\source\repos\CIS174_TestCoreApp\CIS174_TestCoreApp\obj\Release\netcoreapp2.1\Razor\Views\Manage\_ViewImports.g.cshtml.cs
 C:\Users\Ricky\source\repos\CIS174_TestCoreApp\CIS174_TestCoreApp\obj\Release\netcoreapp2.1\Razor\Views\Shared\_LoginPartial.g.cshtml.cs
+C:\Users\Ricky\source\repos\CIS174_TestCoreApp\CIS174_TestCoreApp\obj\Release\netcoreapp2.1\Razor\Views\Person3\Accomplishments.g.cshtml.cs

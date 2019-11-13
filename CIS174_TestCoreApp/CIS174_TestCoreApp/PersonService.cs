@@ -27,7 +27,21 @@ namespace CIS174_TestCoreApp
                     Id = p.Id,
                     FirstName = p.FirstName,
                     LastName = p.LastName,
-                })
+                    NumberOfAccomplishments = p.Accomplishments.Count,
+    })
+                .ToList();
+        }
+
+        public ICollection<AccomplishmentSummary> GetAccomplishments()
+        {
+            return _context.Accomplishments
+                .Select(a => new AccomplishmentSummary
+                {
+                    PersonId = a.PersonId,
+                    Id = a.Id,
+                    Name = a.Name,
+                    DateOfAccomplishment = a.DateOfAccomplishment,
+            })
                 .ToList();
         }
 

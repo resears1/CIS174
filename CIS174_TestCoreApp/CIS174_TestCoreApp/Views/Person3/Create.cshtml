@@ -1,6 +1,5 @@
 ﻿@model CreatePersonCommand
 @{
-    const int MAX_ACC = 10;
     ViewData["Title"] = "Create Person";
 }
 <h2>@ViewData["Title"]</h2>
@@ -8,7 +7,6 @@
 <form asp-controller="Person3" asp-action="Create" method="post" class="form-horizontal">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     @await Html.PartialAsync("_EditPersonPartial")
-
 
     <div class="form-group">
         <table class="table table-striped" id="accomplishments">
@@ -26,10 +24,12 @@
                     var accomplishment = Model.Accomplishments[i];
                     <tr>
                         <td>
+                            <label>Name of Accomplishment: </label>
                             <input asp-for="Accomplishments[i].Name" />
                             <span asp-validation-for="Accomplishments[i].Name" class="text-danger"></span>
                         </td>
                         <td>
+                            <label>Date of Accomplishment</label>
                             <input asp-for="Accomplishments[i].DateOfAccomplishment" />
                             <span asp-validation-for="Accomplishments[i].DateOfAccomplishment" class=" text-danger"></span>
                         </td>
@@ -53,7 +53,7 @@
 @section Scripts {
     @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
     <script>
-        var ingredients = $('#accomplishments tbody');
+        var accomplishments = $('#accomplishments tbody');
         $("#addAccomplishment").click(function () {
             var rowNo = accomplishments.find('tr').length;
             var template =
@@ -61,7 +61,7 @@
                 '<td><input name="Accomplishments[' + rowNo + '].Name" id="Accomplishments_' + rowNo + '_Name" /></td>' +
                 '<td><input name="Accomplishments[' + rowNo + '].DateOfAccomplishment" id="Accomplishments_' + rowNo + 'DateOfAccomplishment" /></td>' +
                 '</tr>';
-            Accomplishments.append(template);
+            accomplishments.append(template);
         });
 
         accomplishments.on('click', '.remove', function (e) {

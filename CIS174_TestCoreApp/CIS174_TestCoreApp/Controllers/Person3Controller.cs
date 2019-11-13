@@ -2,17 +2,28 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CIS174_TestCoreApp.Entities;
 using CIS174_TestCoreApp.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CIS174_TestCoreApp.Controllers
 {
     public class Person3Controller : Controller
     {
-        public PersonService _service;
-        public Person3Controller(PersonService service)
+        private readonly PersonService _service;
+        private readonly UserManager<ApplicationUser> _userService;
+        private readonly IAuthorizationService _authService;
+
+        public Person3Controller(
+            PersonService service,
+            UserManager<ApplicationUser> userService,
+            IAuthorizationService authService)
         {
             _service = service;
+            _userService = userService;
+            _authService = authService;
         }
 
         public IActionResult Index()
@@ -22,6 +33,14 @@ namespace CIS174_TestCoreApp.Controllers
             return View(models);
         }
 
+        [Authorize]
+        public IActionResult Accomplishments()
+        {
+            var model = _service.GetAccomplishments();
+
+            return View(model);
+        }
+
         public IActionResult View(int id)
         {
             var model = _service.GetPersonDetail(id);
@@ -29,12 +48,13 @@ namespace CIS174_TestCoreApp.Controllers
             return View(model);
         }
 
+        [Authorize]
         public IActionResult Create()
         {
             return View(new CreatePersonCommand());
         }
 
-        [HttpPost]
+        [HttpPost, Authorize]
         public IActionResult Create(CreatePersonCommand command)
         {
             try
@@ -55,6 +75,7 @@ namespace CIS174_TestCoreApp.Controllers
             return View(command);
         }
 
+        [Authorize]
         public IActionResult Edit(int id)
         {
             var model = _service.GetPersonForUpdate(id);
