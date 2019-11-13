@@ -1,4 +1,5 @@
 ﻿using CIS174_TestCoreApp.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using System;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CIS174_TestCoreApp.Entities
 {
-    public class PersonContext : DbContext
+    public class PersonContext : IdentityDbContext<ApplicationUser>
     {
         public PersonContext(DbContextOptions<PersonContext> options)
             : base(options)
