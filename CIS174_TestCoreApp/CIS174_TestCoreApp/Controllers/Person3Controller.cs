@@ -7,6 +7,7 @@ using CIS174_TestCoreApp.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace CIS174_TestCoreApp.Controllers
 {
@@ -15,21 +16,26 @@ namespace CIS174_TestCoreApp.Controllers
         private readonly PersonService _service;
         private readonly UserManager<ApplicationUser> _userService;
         private readonly IAuthorizationService _authService;
+        private readonly ILogger<Person3Controller> _logger;
 
         public Person3Controller(
             PersonService service,
             UserManager<ApplicationUser> userService,
-            IAuthorizationService authService)
+            IAuthorizationService authService, ILogger<Person3Controller> logger)
         {
             _service = service;
             _userService = userService;
             _authService = authService;
+            _logger = logger;
         }
 
         public IActionResult Index()
         {
             var models = _service.GetPeople();
-
+            if (models == null)
+            {
+                _logger.LogError("Could not view people");
+            }
             return View(models);
         }
 
@@ -37,14 +43,20 @@ namespace CIS174_TestCoreApp.Controllers
         public IActionResult Accomplishments()
         {
             var model = _service.GetAccomplishments();
-
+            if (model == null)
+            {
+                _logger.LogError("Could not view accomplishments");
+            }
             return View(model);
         }
 
         public IActionResult View(int id)
         {
             var model = _service.GetPersonDetail(id);
- 
+            if (model == null)
+            {
+                _logger.LogError("Could not view {PersonId}", id);
+            }
             return View(model);
         }
 
@@ -71,6 +83,8 @@ namespace CIS174_TestCoreApp.Controllers
                     string.Empty,
                     "An error occured saving the person"
                     );
+
+                _logger.LogWarning("Could not save person");
             }
             return View(command);
         }
@@ -81,6 +95,7 @@ namespace CIS174_TestCoreApp.Controllers
             var model = _service.GetPersonForUpdate(id);
             if (model == null)
             {
+                _logger.LogWarning("Person {PersonId} could not be edited.", id);
                 return NotFound();
             }
             return View(model);
@@ -103,6 +118,7 @@ namespace CIS174_TestCoreApp.Controllers
                     string.Empty,
                     "An error occured saving the person"
                     );
+                _logger.LogWarning("Person {PersonId} could not be edited.");
             }
 
             return View(command);

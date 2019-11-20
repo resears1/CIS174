@@ -128,7 +128,7 @@ using CIS174_TestCoreApp.Models.ManageViewModels;
             WriteLiteral("</td>\r\n                <td>");
             EndContext();
             BeginContext(629, 67, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d9561de912a34a3eb05656086b7ae08c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "68db1a04f3e246888fe44f199679872e", async() => {
                 BeginContext(688, 4, true);
                 WriteLiteral("View");
                 EndContext();
@@ -172,7 +172,7 @@ using CIS174_TestCoreApp.Models.ManageViewModels;
             WriteLiteral("        </tbody>\r\n    </table>\r\n</div>\r\n");
             EndContext();
             BeginContext(777, 68, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2019508ff6404af9b5ac80ddf2424437", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c7f5df7700c74fb88336f8fb674715da", async() => {
                 BeginContext(824, 17, true);
                 WriteLiteral("Create new Person");
                 EndContext();

@@ -115,7 +115,7 @@ using CIS174_TestCoreApp.Models.ManageViewModels;
             WriteLiteral("</td>\r\n                <td>");
             EndContext();
             BeginContext(587, 81, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "aad185820407447183f8696c34d3c7dd", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "aaf2cba77ab54ad78e130adb8e3bd092", async() => {
                 BeginContext(660, 4, true);
                 WriteLiteral("View");
                 EndContext();
